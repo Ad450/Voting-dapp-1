@@ -1,10 +1,18 @@
 import * as React from "react";
-import { ChakraProvider, Box, Heading, theme } from "@chakra-ui/react";
+import { ChakraProvider, theme } from "@chakra-ui/react";
+import { VerifyVoter } from "./features/voter_verification/components/verify_voter";
+import { Routes, Route } from "react-router-dom";
+import { Voting } from "./features/vote/components/voting";
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Box textAlign="center" fontSize="xl">
-      <Heading>Hello</Heading>
-    </Box>
+    <Routes>
+      <Route path="/" element={<VerifyVoter />} />
+      <Route path="/voting" element={<Voting />} />
+    </Routes>
   </ChakraProvider>
 );
+
+// import Web3 from "web3";
+
+// export default getWeb3;
